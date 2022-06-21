@@ -5,7 +5,7 @@ export type BaseTemplateProps = {
 }
 
 function BaseTemplate({ sampleTextProp }: BaseTemplateProps) {
-  return <div className="styles.container">{sampleTextProp}</div>
+  return <div className={styles.container}>{sampleTextProp}</div>
 }
 
 export default BaseTemplate

@@ -47,6 +47,7 @@ module.exports = {
         unnamedComponents: 'arrow-function',
       },
     ],
+    'import/no-extraneous-dependencies': 'off',
     'prettier/prettier': 'error',
   },
   overrides: [

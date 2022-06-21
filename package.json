@@ -71,8 +71,5 @@
     "prettier": "^2.4.1",
     "prisma": "^3.6.0",
     "ts-node": "^10.4.0"
-  },
-  "resolutions": {
-    "webpack": "^5"
   }
 }

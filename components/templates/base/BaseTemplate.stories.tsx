@@ -10,6 +10,7 @@ export default {
 } as ComponentMeta<typeof BaseTemplate>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
+// eslint-disable-next-line react/function-component-definition
 const Template: ComponentStory<typeof BaseTemplate> = (args) => <BaseTemplate {...args} />
 
 export const Base = Template.bind({})

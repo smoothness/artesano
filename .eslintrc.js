@@ -1,5 +1,13 @@
 module.exports = {
-  extends: ['next', 'next/core-web-vitals', 'eslint:recommended', 'airbnb', 'airbnb/hooks', 'prettier'],
+  extends: [
+    'next',
+    'next/core-web-vitals',
+    'eslint:recommended',
+    'airbnb',
+    'airbnb/hooks',
+    'prettier',
+    'plugin:storybook/recommended',
+  ],
   plugins: ['react', '@typescript-eslint', 'prettier'],
   env: {
     browser: true,
@@ -41,4 +49,13 @@ module.exports = {
     ],
     'prettier/prettier': 'error',
   },
+  overrides: [
+    {
+      files: ['*.stories.@(ts|tsx|js|jsx|mjs|cjs)'],
+      rules: {
+        // example of overriding a rule
+        'storybook/hierarchy-separator': 'error',
+      },
+    },
+  ],
 }

@@ -1,6 +1,10 @@
-import type { AppProps } from 'next/app'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+import type { AppProps } from 'next/app'
+import { ReactElement } from 'react'
+
 import 'reset-css'
+
+import { NextPageWithLayout } from './page'
 
 const theme = extendTheme({
   colors: {
@@ -30,8 +34,14 @@ const theme = extendTheme({
   },
 })
 
-function App({ Component, pageProps }: AppProps) {
-  return (
+interface AppPropsWithLayout extends AppProps {
+  Component: NextPageWithLayout
+}
+
+function App({ Component, pageProps }: AppPropsWithLayout) {
+  const getLayout = Component.getLayout || ((page: ReactElement) => page)
+
+  return getLayout(
     <ChakraProvider theme={theme}>
       <Component {...pageProps} />
     </ChakraProvider>
